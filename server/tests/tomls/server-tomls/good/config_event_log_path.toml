@@ -1,0 +1,5 @@
+bind_address = "127.0.0.1:0"
+client_config_path = "/tmp/config"
+event_log_path = "/tmp/log/chimney-events.log"
+log_level = "debug"
+log_path = "/tmp/chimney.log"

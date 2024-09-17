@@ -1,0 +1,13 @@
+[package]
+name = "santa-types"
+description = "Santa types"
+version = "0.1.0"
+authors = ["skim <skim@skim.dev>"]
+edition = "2021"
+repository = "https://github.com/sl4m/chimney-rs"
+license = "MIT"
+
+[dependencies]
+schemars = "0"
+serde = { version = "1", features = ["derive"] }
+slog = "2.7.0"

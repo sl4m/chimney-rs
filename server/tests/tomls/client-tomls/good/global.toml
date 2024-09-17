@@ -1,0 +1,11 @@
+enable_bundles = false
+enable_transitive_rules = true
+batch_size = 100
+full_sync_interval = 600
+client_mode = "MONITOR"
+# allowed_path_regex = "^(?:/Users)/.*"
+# blocked_path_regex = "^(?:/Users)/.*"
+block_usb_mount = false
+# remount_usb_mode = "noexec"
+sync_type = "CLEAN"
+override_file_access_action = "AUDIT_ONLY"

@@ -1,0 +1,3 @@
+bind_address = "127.0.0.1:0"
+client_config_path = "/tmp/config"
+log_path = "/tmp"
