@@ -1,4 +1,4 @@
-[![Build](https://github.com/sl4m/chimney-rs/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/sl4m/chimney-rs/actions/workflows/build.yml)
+[![Build](https://github.com/sl4m/chimney-rs/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/sl4m/chimney-rs/actions/workflows/ci.yml)
 
 An implementation of the [Santa sync protocol](https://santa.dev/development/sync-protocol.html).
 
