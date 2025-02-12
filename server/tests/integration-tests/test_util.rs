@@ -140,7 +140,7 @@ impl Display for ContentEncoding {
 }
 
 pub fn build_request(
-    request_body: String,
+    request_body: &str,
     encoding: &ContentEncoding,
     uri: hyper::Uri,
 ) -> hyper::Request<Body> {
@@ -154,7 +154,7 @@ pub fn build_request(
         .expect("invalid request")
 }
 
-pub fn encode(request_body: String, encoding: &ContentEncoding) -> EncodedBody {
+pub fn encode(request_body: &str, encoding: &ContentEncoding) -> EncodedBody {
     match encoding {
         ContentEncoding::Deflate => zlib_encode_str(request_body),
         ContentEncoding::Gzip => gzip_encode_str(request_body),
@@ -165,10 +165,10 @@ type EncodedBody = Vec<u8>;
 
 pub fn zlib_encode<T: Serialize>(request: &T) -> EncodedBody {
     let serialized = serde_json::to_string(request).unwrap();
-    zlib_encode_str(serialized)
+    zlib_encode_str(&serialized)
 }
 
-pub fn zlib_encode_str(serialized: String) -> EncodedBody {
+pub fn zlib_encode_str(serialized: &str) -> EncodedBody {
     let mut zlib = ZlibEncoder::new(vec![], Compression::default());
     zlib.write_all(serialized.as_bytes()).unwrap();
     zlib.finish().unwrap()
@@ -176,10 +176,10 @@ pub fn zlib_encode_str(serialized: String) -> EncodedBody {
 
 pub fn gzip_encode<T: Serialize>(request: &T) -> EncodedBody {
     let serialized = serde_json::to_string(request).unwrap();
-    gzip_encode_str(serialized)
+    gzip_encode_str(&serialized)
 }
 
-pub fn gzip_encode_str(serialized: String) -> EncodedBody {
+pub fn gzip_encode_str(serialized: &str) -> EncodedBody {
     let mut gz = GzEncoder::new(vec![], Compression::default());
     gz.write_all(serialized.as_bytes()).unwrap();
     gz.finish().unwrap()
