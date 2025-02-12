@@ -18,8 +18,7 @@ async fn postflight_success() {
     let request_body = r#"{
         "rules_received": 200,
         "rules_processed": 100
-    }"#
-    .into();
+    }"#;
     let uri = testctx
         .inner
         .client_testctx
@@ -43,7 +42,7 @@ async fn postflight_optional_fields() {
         DEFAULT_CONFIG_PATH,
         EventLogMode::None,
     );
-    let request_body = r#"{}"#.into();
+    let request_body = r#"{}"#;
     let uri = testctx
         .inner
         .client_testctx

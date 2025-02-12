@@ -64,7 +64,7 @@ async fn eventupload_deflate_specified_machine_id() {
     serde_json::from_str::<santa_types::EventUploadOptions>(request_body)
         .expect("json is parseable");
     let uri = testctx.inner.client_testctx.url(&build_uri(&machine_id));
-    let request = build_request(request_body.into(), &ContentEncoding::Deflate, uri);
+    let request = build_request(request_body, &ContentEncoding::Deflate, uri);
 
     testctx
         .inner
@@ -94,7 +94,7 @@ async fn eventupload_gzip_specified_machine_id() {
     serde_json::from_str::<santa_types::EventUploadOptions>(request_body)
         .expect("json is parseable");
     let uri = testctx.inner.client_testctx.url(&build_uri(&machine_id));
-    let request = build_request(request_body.into(), &ContentEncoding::Gzip, uri);
+    let request = build_request(request_body, &ContentEncoding::Gzip, uri);
 
     testctx
         .inner
@@ -124,7 +124,7 @@ async fn eventupload_no_persistence() {
     serde_json::from_str::<santa_types::EventUploadOptions>(request_body)
         .expect("json is parseable");
     let uri = testctx.inner.client_testctx.url(&build_uri(&machine_id));
-    let request = build_request(request_body.into(), &ContentEncoding::Gzip, uri);
+    let request = build_request(request_body, &ContentEncoding::Gzip, uri);
 
     testctx
         .inner
@@ -228,7 +228,7 @@ async fn eventupload_deflate_multiple_events() {
     serde_json::from_str::<santa_types::EventUploadOptions>(request_body)
         .expect("json is parseable");
     let uri = testctx.inner.client_testctx.url(&build_uri(&machine_id));
-    let request = build_request(request_body.into(), &ContentEncoding::Deflate, uri);
+    let request = build_request(request_body, &ContentEncoding::Deflate, uri);
 
     testctx
         .inner

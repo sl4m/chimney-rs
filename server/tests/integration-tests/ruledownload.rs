@@ -18,7 +18,7 @@ async fn ruledownload_deflate_specified_machine_id() {
         DEFAULT_CONFIG_PATH,
         EventLogMode::None,
     );
-    let request_body = r#"{}"#.into();
+    let request_body = r#"{}"#;
     let uri = testctx.inner.client_testctx.url(&build_uri(&machine_id));
     let request = build_request(request_body, &ContentEncoding::Deflate, uri);
 
@@ -44,7 +44,7 @@ async fn ruledownload_gzip_specified_machine_id() {
         DEFAULT_CONFIG_PATH,
         EventLogMode::None,
     );
-    let request_body = r#"{}"#.into();
+    let request_body = r#"{}"#;
     let uri = testctx.inner.client_testctx.url(&build_uri(&machine_id));
     let request = build_request(request_body, &ContentEncoding::Gzip, uri);
 

@@ -26,8 +26,7 @@ async fn preflight_deflate_specified_machine_id() {
         "santa_version": "santa_version",
         "primary_user": "primary_user",
         "client_mode": "MONITOR"
-    }"#
-    .into();
+    }"#;
     let uri = testctx.inner.client_testctx.url(&build_uri(&machine_id));
     let request = build_request(request_body, &ContentEncoding::Deflate, uri);
 
@@ -61,8 +60,7 @@ async fn preflight_gzip_specified_machine_id() {
         "santa_version": "santa_version",
         "primary_user": "primary_user",
         "client_mode": "MONITOR"
-    }"#
-    .into();
+    }"#;
     let uri = testctx.inner.client_testctx.url(&build_uri(&machine_id));
     let request = build_request(request_body, &ContentEncoding::Gzip, uri);
 
