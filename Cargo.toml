@@ -4,4 +4,4 @@ members = [
   "server",
   "types",
 ]
-resolver = "2"
+resolver = "3"
