@@ -3,7 +3,7 @@ name = "chimney"
 description = "Santa sync server"
 version = "0.1.0"
 authors = ["skim <skim@skim.dev>"]
-edition = "2021"
+edition = "2024"
 repository = "https://github.com/sl4m/chimney-rs"
 license = "MIT"
 

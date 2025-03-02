@@ -1,7 +1,7 @@
 use dropshot::test_util::read_json;
 
 use crate::test_util::{
-    build_request, ContentEncoding, EventLogMode, MachineId, TestContext, DEFAULT_CONFIG_PATH,
+    ContentEncoding, DEFAULT_CONFIG_PATH, EventLogMode, MachineId, TestContext, build_request,
 };
 
 const PREFIX_URI: &str = "/preflight";
