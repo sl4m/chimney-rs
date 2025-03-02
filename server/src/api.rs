@@ -15,7 +15,7 @@ pub(crate) trait SantaSyncServerApi {
 
     #[endpoint(
         method = POST,
-        path = "/v1/preflight/{machine_id}",
+        path = "/preflight/{machine_id}",
         content_type = "application/json",
     )]
     async fn preflight_post(
@@ -26,7 +26,7 @@ pub(crate) trait SantaSyncServerApi {
 
     #[endpoint(
         method = POST,
-        path = "/v1/eventupload/{machine_id}",
+        path = "/eventupload/{machine_id}",
         content_type = "application/json",
     )]
     async fn eventupload_post(
@@ -37,7 +37,7 @@ pub(crate) trait SantaSyncServerApi {
 
     #[endpoint(
         method = POST,
-        path = "/v1/ruledownload/{machine_id}",
+        path = "/ruledownload/{machine_id}",
         content_type = "application/json",
     )]
     async fn ruledownload_post(
@@ -47,7 +47,7 @@ pub(crate) trait SantaSyncServerApi {
 
     #[endpoint(
         method = POST,
-        path = "/v1/postflight/{machine_id}",
+        path = "/postflight/{machine_id}",
         content_type = "application/json",
     )]
     async fn postflight_post(

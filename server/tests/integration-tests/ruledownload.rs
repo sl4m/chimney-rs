@@ -4,7 +4,7 @@ use crate::test_util::{
     build_request, ContentEncoding, EventLogMode, MachineId, TestContext, DEFAULT_CONFIG_PATH,
 };
 
-const PREFIX_URI: &str = "/v1/ruledownload";
+const PREFIX_URI: &str = "/ruledownload";
 
 fn build_uri(machine_id: &str) -> String {
     format!("{}/{}", PREFIX_URI, machine_id)
