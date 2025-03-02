@@ -4,7 +4,7 @@ use crate::test_util::{
     build_request, ContentEncoding, EventLogMode, MachineId, TestContext, DEFAULT_CONFIG_PATH,
 };
 
-const PREFIX_URI: &str = "/v1/eventupload";
+const PREFIX_URI: &str = "/eventupload";
 const DEFAULT_REQUEST_BODY: &str = r#"{
     "events": [{
         "file_sha256": "file_sha256",
