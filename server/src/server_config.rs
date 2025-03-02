@@ -177,8 +177,8 @@ mod tests {
         V: AsRef<OsStr>,
     {
         match value {
-            Some(v) => env::set_var(key, v),
-            None => env::remove_var(key),
+            Some(v) => unsafe { env::set_var(key, v) },
+            None => unsafe { env::remove_var(key) },
         }
     }
 

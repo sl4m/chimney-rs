@@ -4,7 +4,7 @@ use std::io::LineWriter;
 use std::path::Path;
 
 use camino::Utf8PathBuf;
-use slog::{o, Drain, Level, Logger};
+use slog::{Drain, Level, Logger, o};
 
 #[derive(Debug)]
 pub enum EventLogging {

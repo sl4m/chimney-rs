@@ -1,7 +1,7 @@
 use bytes::Bytes;
-use dropshot::test_util::{read_json, TestContext};
+use dropshot::test_util::{TestContext, read_json};
 use dropshot::{
-    endpoint, ApiDescription, Body, ConfigDropshot, HandlerTaskMode, HttpError, RequestContext,
+    ApiDescription, Body, ConfigDropshot, HandlerTaskMode, HttpError, RequestContext, endpoint,
 };
 use http::header::{CONTENT_ENCODING, CONTENT_TYPE};
 use http::{Method, Response, StatusCode};

@@ -1,7 +1,7 @@
-use slog::{Record, KV};
+use slog::{KV, Record};
 
-use crate::event_upload::Decision;
 use crate::Event;
+use crate::event_upload::Decision;
 
 impl KV for Event {
     fn serialize(&self, record: &Record, serializer: &mut dyn slog::Serializer) -> slog::Result {
