@@ -2,20 +2,20 @@ use std::fmt::{Display, Formatter, Result};
 use std::io::prelude::*;
 
 use camino::Utf8PathBuf;
-use dropshot::test_util::TestContext as DropshotTestContext;
-use dropshot::test_util::{log_file_for_test, LogContext};
 use dropshot::ServerContext;
+use dropshot::test_util::TestContext as DropshotTestContext;
+use dropshot::test_util::{LogContext, log_file_for_test};
 use dropshot::{
     Body, ConfigDropshot, ConfigLogging, ConfigLoggingIfExists, ConfigLoggingLevel, HandlerTaskMode,
 };
-use flate2::write::{GzEncoder, ZlibEncoder};
 use flate2::Compression;
-use http::header::{CONTENT_ENCODING, CONTENT_TYPE};
+use flate2::write::{GzEncoder, ZlibEncoder};
 use http::Method;
+use http::header::{CONTENT_ENCODING, CONTENT_TYPE};
 use serde::Serialize;
-use slog::{o, Logger};
+use slog::{Logger, o};
 
-use chimney_server::{api, ClientConfig, ConfigStore, Context, EventLogging};
+use chimney_server::{ClientConfig, ConfigStore, Context, EventLogging, api};
 
 pub const DEFAULT_CONFIG_PATH: &str =
     concat!(env!("CARGO_MANIFEST_DIR"), "/tests/tomls/client-tomls/good");

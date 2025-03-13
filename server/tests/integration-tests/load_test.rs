@@ -3,7 +3,7 @@ use std::time::Duration;
 
 #[allow(unused_imports)]
 use crate::test_util::{
-    build_request, ContentEncoding, EventLogMode, MachineId, TestContext, DEFAULT_CONFIG_PATH,
+    ContentEncoding, DEFAULT_CONFIG_PATH, EventLogMode, MachineId, TestContext, build_request,
 };
 
 #[allow(dead_code)]
