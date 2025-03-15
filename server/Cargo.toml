@@ -10,7 +10,7 @@ license = "MIT"
 [dependencies]
 santa-types = { path = "../types" }
 anyhow = "1.0"
-async-trait = "0.1.86"
+async-trait = "0.1.88"
 bytes = "1"
 camino = { version = "1.1", features = ["serde1"] }
 dropshot = "0.16.0"
