@@ -1,6 +1,9 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [":dependencyDashboard"],
+  "extends": [
+    ":dependencyDashboard",
+    "helpers:pinGitHubActionDigests"
+  ],
   "addLabels": ["dep"],
   "ignorePaths": [
     "**/__fixtures__/**",
