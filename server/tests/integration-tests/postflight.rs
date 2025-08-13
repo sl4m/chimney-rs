@@ -5,7 +5,7 @@ use crate::test_util::{
 const PREFIX_URI: &str = "/postflight";
 
 fn build_uri(machine_id: &str) -> String {
-    format!("{}/{}", PREFIX_URI, machine_id)
+    format!("{PREFIX_URI}/{machine_id}")
 }
 
 #[tokio::test]
