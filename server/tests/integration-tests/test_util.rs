@@ -49,7 +49,7 @@ impl TestContext<Context> {
         let (event_logctx, event_log) = match event_logging {
             EventLogMode::None => (None, None),
             EventLogMode::Persist => {
-                let ctx = EventLogContext::new(&format!("{}_events", test_name));
+                let ctx = EventLogContext::new(&format!("{test_name}_events"));
                 let log = ctx.log.new(o!());
                 (Some(ctx), Some(log))
             }
@@ -77,16 +77,16 @@ impl TestContext<Context> {
     }
 
     pub fn events_as_string(&self) -> Vec<String> {
-        if let Some(ctx) = &self.event_logctx {
-            if let Some(log_path) = &ctx.log_path {
-                let log_contents = std::fs::read_to_string(log_path).unwrap();
-                let results = log_contents
-                    .split('\n')
-                    .filter(|line| !line.is_empty())
-                    .map(|line| line.to_string())
-                    .collect::<Vec<String>>();
-                return results;
-            }
+        if let Some(ctx) = &self.event_logctx
+            && let Some(log_path) = &ctx.log_path
+        {
+            let log_contents = std::fs::read_to_string(log_path).unwrap();
+            let results = log_contents
+                .split('\n')
+                .filter(|line| !line.is_empty())
+                .map(|line| line.to_string())
+                .collect::<Vec<String>>();
+            return results;
         }
         vec![]
     }
@@ -107,7 +107,7 @@ pub struct EventLogContext {
 impl EventLogContext {
     fn new(test_name: &str) -> Self {
         let log_path = log_file_for_test(test_name);
-        eprintln!("event log file: {}", log_path);
+        eprintln!("event log file: {log_path}");
         let log_config = EventLogging::File {
             path: log_path.clone(),
         };

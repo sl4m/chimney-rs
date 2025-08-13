@@ -44,7 +44,7 @@ where
             .get(http::header::CONTENT_ENCODING)
             .map(|value| {
                 value.to_str().map_err(|e| {
-                    HttpError::for_bad_request(None, format!("invalid content-encoding: {}", e))
+                    HttpError::for_bad_request(None, format!("invalid content-encoding: {e}"))
                 })
             })
             .unwrap_or(Ok(CONTENT_ENCODING_NONE))?;
@@ -73,7 +73,7 @@ fn decode_body(content_encoding: &str, body: &[u8]) -> Result<Bytes, HttpError> 
                 HttpError::for_client_error(
                     None,
                     ClientErrorStatusCode::UNSUPPORTED_MEDIA_TYPE,
-                    format!("not a zlib request body: {}", e),
+                    format!("not a zlib request body: {e}"),
                 )
             })?;
             Ok(Bytes::from(decoded))
@@ -85,7 +85,7 @@ fn decode_body(content_encoding: &str, body: &[u8]) -> Result<Bytes, HttpError> 
                 HttpError::for_client_error(
                     None,
                     ClientErrorStatusCode::UNSUPPORTED_MEDIA_TYPE,
-                    format!("not a gzip request body: {}", e),
+                    format!("not a gzip request body: {e}"),
                 )
             })?;
             Ok(Bytes::from(decoded))
@@ -94,7 +94,7 @@ fn decode_body(content_encoding: &str, body: &[u8]) -> Result<Bytes, HttpError> 
         _ => Err(HttpError::for_client_error(
             None,
             ClientErrorStatusCode::UNSUPPORTED_MEDIA_TYPE,
-            format!("unsupported content-encoding \"{}\"", content_encoding),
+            format!("unsupported content-encoding \"{content_encoding}\""),
         )),
     }
 }

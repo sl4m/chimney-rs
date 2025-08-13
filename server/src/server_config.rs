@@ -52,13 +52,13 @@ impl ServerConfig {
                 self.log_path
             ));
         }
-        if let Some(path) = &self.event_log_path {
-            if path.is_dir() {
-                return Err(anyhow!(
-                    "event log path \"{}\" must include the log filename",
-                    path
-                ));
-            }
+        if let Some(path) = &self.event_log_path
+            && path.is_dir()
+        {
+            return Err(anyhow!(
+                "event log path \"{}\" must include the log filename",
+                path
+            ));
         }
         Ok(())
     }

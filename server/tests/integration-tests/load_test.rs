@@ -49,7 +49,7 @@ const DEFAULT_EVENTUPLOAD_BODY: &str = r#"{
 
 #[allow(dead_code)]
 fn build_uri(machine_id: &str) -> String {
-    format!("/eventupload/{}", machine_id)
+    format!("/eventupload/{machine_id}")
 }
 
 #[tokio::test]
