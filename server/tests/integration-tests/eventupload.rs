@@ -49,7 +49,7 @@ const DEFAULT_EXPECTED_RESULTS: &str = r#"
 "#;
 
 fn build_uri(machine_id: &str) -> String {
-    format!("{}/{}", PREFIX_URI, machine_id)
+    format!("{PREFIX_URI}/{machine_id}")
 }
 
 #[tokio::test]

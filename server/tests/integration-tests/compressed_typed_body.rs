@@ -1,3 +1,5 @@
+#![allow(dead_code)]
+
 use bytes::Bytes;
 use dropshot::test_util::{TestContext, read_json};
 use dropshot::{
