@@ -83,27 +83,27 @@ impl KV for Event {
         }
         for (index, signing_chain) in self.signing_chain.iter().enumerate() {
             serializer.emit_str(
-                format!("signing_chain.{}.sha256", index).into(),
+                format!("signing_chain.{index}.sha256").into(),
                 &signing_chain.sha256,
             )?;
             serializer.emit_str(
-                format!("signing_chain.{}.cn", index).into(),
+                format!("signing_chain.{index}.cn").into(),
                 &signing_chain.cn,
             )?;
             serializer.emit_str(
-                format!("signing_chain.{}.org", index).into(),
+                format!("signing_chain.{index}.org").into(),
                 &signing_chain.org,
             )?;
             serializer.emit_str(
-                format!("signing_chain.{}.ou", index).into(),
+                format!("signing_chain.{index}.ou").into(),
                 &signing_chain.ou,
             )?;
             serializer.emit_u32(
-                format!("signing_chain.{}.valid_from", index).into(),
+                format!("signing_chain.{index}.valid_from").into(),
                 signing_chain.valid_from,
             )?;
             serializer.emit_u32(
-                format!("signing_chain.{}.valid_until", index).into(),
+                format!("signing_chain.{index}.valid_until").into(),
                 signing_chain.valid_until,
             )?;
         }
