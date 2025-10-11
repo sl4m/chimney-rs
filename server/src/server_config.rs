@@ -21,15 +21,6 @@ pub struct ServerConfig {
     pub tls_config: Option<TlsConfig>,
 }
 
-#[derive(Clone, Debug, Deserialize, Eq, PartialEq, Serialize)]
-pub enum EventLogMode {
-    #[serde(rename = "combined")]
-    Combined,
-    // TODO: need to implement
-    //#[serde(rename = "per_executable")]
-    //PerExecutable,
-}
-
 impl ServerConfig {
     pub fn from_file<P: AsRef<Utf8Path>>(maybe_path: Option<P>) -> Result<Self, anyhow::Error> {
         let path = maybe_path
