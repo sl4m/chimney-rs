@@ -29,7 +29,7 @@ const DEFAULT_REQUEST_BODY: &str = r#"{
         "parent_name": "parent_name",
         "quarantine_data_url": "quarantine_data_url",
         "quarantine_referer_url": "quarantine_referer_url",
-        "quarantine_timestamp": "quarantine_timestamp",
+        "quarantine_timestamp": 1234567,
         "quarantine_agent_bundle_id": "quarantine_agent_bundle_id",
         "signing_chain": [{
             "sha256": "sha256",
@@ -45,7 +45,7 @@ const DEFAULT_REQUEST_BODY: &str = r#"{
     }]
 }"#;
 const DEFAULT_EXPECTED_RESULTS: &str = r#"
-{"machine_id":"machine-id-1234","file_sha256":"file_sha256","file_path":"file_path","file_name":"file_name","executing_user":"executing_user","execution_time":123412354345.4,"loggedin_users":"abcd, defg","current_sessions":"1, 2","decision":"ALLOW_BINARY","file_bundle_id":"file_bundle_id","file_bundle_path":"file_bundle_path","file_bundle_executable_rel_path":"file_bundle_executable_rel_path","file_bundle_name":"file_bundle_name","file_bundle_version":"file_bundle_version","file_bundle_version_string":"file_bundle_version_string","file_bundle_hash":"file_bundle_hash","file_bundle_hash_millis":12345,"file_bundle_binary_count":56,"pid":1234,"ppid":5678,"parent_name":"parent_name","quarantine_data_url":"quarantine_data_url","quarantine_referer_url":"quarantine_referer_url","quarantine_agent_bundle_id":"quarantine_agent_bundle_id","signing_chain.0.sha256":"sha256","signing_chain.0.cn":"cn","signing_chain.0.org":"org","signing_chain.0.ou":"ou","signing_chain.0.valid_from":12345,"signing_chain.0.valid_until":57689,"signing_id":"signing_id","team_id":"team_id","cdhash":"cdhash"}
+{"machine_id":"machine-id-1234","file_sha256":"file_sha256","file_path":"file_path","file_name":"file_name","executing_user":"executing_user","execution_time":123412354345.4,"loggedin_users":"abcd, defg","current_sessions":"1, 2","decision":"ALLOW_BINARY","file_bundle_id":"file_bundle_id","file_bundle_path":"file_bundle_path","file_bundle_executable_rel_path":"file_bundle_executable_rel_path","file_bundle_name":"file_bundle_name","file_bundle_version":"file_bundle_version","file_bundle_version_string":"file_bundle_version_string","file_bundle_hash":"file_bundle_hash","file_bundle_hash_millis":12345,"file_bundle_binary_count":56,"pid":1234,"ppid":5678,"parent_name":"parent_name","quarantine_data_url":"quarantine_data_url","quarantine_referer_url":"quarantine_referer_url","quarantine_timestamp":1234567.0,"quarantine_agent_bundle_id":"quarantine_agent_bundle_id","signing_chain.0.sha256":"sha256","signing_chain.0.cn":"cn","signing_chain.0.org":"org","signing_chain.0.ou":"ou","signing_chain.0.valid_from":12345,"signing_chain.0.valid_until":57689,"signing_id":"signing_id","team_id":"team_id","cdhash":"cdhash"}
 "#;
 
 fn build_uri(machine_id: &str) -> String {
@@ -172,7 +172,7 @@ async fn eventupload_deflate_multiple_events() {
                 "parent_name": "parent_name",
                 "quarantine_data_url": "quarantine_data_url",
                 "quarantine_referer_url": "quarantine_referer_url",
-                "quarantine_timestamp": "quarantine_timestamp",
+                "quarantine_timestamp": 1234567,
                 "quarantine_agent_bundle_id": "quarantine_agent_bundle_id",
                 "signing_chain": [{
                     "sha256": "sha256",
@@ -209,7 +209,7 @@ async fn eventupload_deflate_multiple_events() {
                 "parent_name": "parent_name_2",
                 "quarantine_data_url": "quarantine_data_url_2",
                 "quarantine_referer_url": "quarantine_referer_url_2",
-                "quarantine_timestamp": "quarantine_timestamp_2",
+                "quarantine_timestamp": 1234567,
                 "quarantine_agent_bundle_id": "quarantine_agent_bundle_id_2",
                 "signing_chain": [{
                     "sha256": "sha256_2",
