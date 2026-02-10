@@ -72,8 +72,8 @@ impl KV for Event {
         if let Some(quarantine_referer_url) = &self.quarantine_referer_url {
             serializer.emit_str("quarantine_referer_url".into(), quarantine_referer_url)?;
         }
-        if let Some(quarantime_timestamp) = self.quarantime_timestamp {
-            serializer.emit_f64("quarantime_timestamp".into(), quarantime_timestamp)?;
+        if let Some(quarantine_timestamp) = self.quarantine_timestamp {
+            serializer.emit_f64("quarantine_timestamp".into(), quarantine_timestamp)?;
         }
         if let Some(quarantine_agent_bundle_id) = &self.quarantine_agent_bundle_id {
             serializer.emit_str(
@@ -126,14 +126,14 @@ impl KV for Decision {
         let key = "decision".into();
         match self {
             Decision::AllowBinary => serializer.emit_str(key, "ALLOW_BINARY"),
-            Decision::AllowCertificate => serializer.emit_str(key, "ALLOW_BINARY"),
+            Decision::AllowCertificate => serializer.emit_str(key, "ALLOW_CERTIFICATE"),
             Decision::AllowCdHash => serializer.emit_str(key, "ALLOW_CDHASH"),
             Decision::AllowScope => serializer.emit_str(key, "ALLOW_SCOPE"),
             Decision::AllowSigningId => serializer.emit_str(key, "ALLOW_SIGNINGID"),
             Decision::AllowTeamId => serializer.emit_str(key, "ALLOW_TEAMID"),
             Decision::AllowUnknown => serializer.emit_str(key, "ALLOW_UNKNOWN"),
             Decision::BlockBinary => serializer.emit_str(key, "BLOCK_BINARY"),
-            Decision::BlockCertificate => serializer.emit_str(key, "BLOCK_BINARY"),
+            Decision::BlockCertificate => serializer.emit_str(key, "BLOCK_CERTIFICATE"),
             Decision::BlockCdHash => serializer.emit_str(key, "BLOCK_CDHASH"),
             Decision::BlockScope => serializer.emit_str(key, "BLOCK_SCOPE"),
             Decision::BlockSigningId => serializer.emit_str(key, "BLOCK_SIGNINGID"),

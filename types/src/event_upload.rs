@@ -35,7 +35,7 @@ pub struct Event {
     pub parent_name: Option<String>,
     pub quarantine_data_url: Option<String>,
     pub quarantine_referer_url: Option<String>,
-    pub quarantime_timestamp: Option<f64>,
+    pub quarantine_timestamp: Option<f64>,
     pub quarantine_agent_bundle_id: Option<String>,
     #[serde(default)]
     pub signing_chain: Vec<SigningChainObject>,
